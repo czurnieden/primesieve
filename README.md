@@ -10,8 +10,10 @@ Christoph Zurnieden <czurnieden@gmx.de>
 ```shell
 $ git clone https://github.com/czurnieden/primesieve.git
 $ cd primesieve
-$ npm install -g*
+$ npm install -g
 ```
+There is also a Unix (or newer Macs) dependant CLI version in `./bin` which
+gets not installed by default, yet.
 
 ##Version
 
