@@ -223,11 +223,11 @@ In a much simpler but frowned upon way:
 ```javascript
 var primorial = eval(p.primes(8).join("*"));
 ```
-Yes, eval is not the devil; it has its uses but not in this way.
+Yes, eval is not the devil; it has its uses although not here.
 
 ##Test
 
-A test with a `vows` script is implemented. Please run if `vows` is installed`
+A test with a `vows` script is implemented. Please run if `vows` is installed:
 
 ```shell
 npm test
