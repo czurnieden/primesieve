@@ -15,6 +15,7 @@
     "scripts": {
         "test": "node ./primesieve-test.js"
     },
+    "main": "primesieve.js",
     "license": "MIT",
     "keywords": [
         "primesieve",
