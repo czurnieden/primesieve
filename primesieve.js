@@ -158,6 +158,12 @@ var primesieve = (function() {
             Primesieve.error = E_ARG_TOO_LOW;
             return undefined;
         }
+        if (prime > primelimit) {
+            Primesieve.grow(prime + 100);
+            if(Primesieve.error ==  E_ABOVE_LIMIT){
+                return undefined;
+            }
+        }
         Primesieve.error = E_SUCCESS;
         return prevset(prime);
     };
