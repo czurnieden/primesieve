@@ -12,6 +12,8 @@
     "devDependencies": {
         "vows": "^0.5.x"
     },
+    "bin" : "./bin/primesieve.js",
+    "version":"0.0.1",
     "scripts": {
         "test": "node ./primesieve-test.js"
     },
