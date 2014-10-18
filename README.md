@@ -53,9 +53,9 @@ This programm offers ten functions which are in alphabetical order:
 <dd>
 Build a prime sieve up to the amount <code>amount</code>. Allows for skipping of the
 automated adapting of the sieve-size if <code>amount</code> is chosen high enough.
-
+<br>
 Returns: <code>undefined</code> in case of an error
-
+<br>
 See also: <code>grow(amount)</code>
 </dd>
 <dt><code>grow(amount)</code></dt>
@@ -63,17 +63,17 @@ See also: <code>grow(amount)</code>
 Grows the prime sieve by the amount <code>amount</code>. It just builds a new primesieve with
 a different limit (if higher then the already existing limit) for now. Mostly
 used internally.
-
+<br>
 Returns:  <code>undefined</code> in case of an error
-
+<br>
 See also: <code>fill(amount)</code>
 </dd>
 <dt><code>isSmallPrime(number)</code></dt>
 <dd>
 Tests if <code>number</code> is a prime. Automatically builds a sieve if <code>number</code> is larger then the existing sieve.
-
+<br>
 Returns: <code>true</code> or <code>false</code> if <code>number</code> is a prime or not, respectively or <code>undefined</code> in case of an error.
-
+<br>
 See also: <code>Primesieve.raiseLimit(limit)</code>
 </dd>
 
@@ -82,14 +82,14 @@ See also: <code>Primesieve.raiseLimit(limit)</code>
 <dd>
 Searches for the nearest prime larger than <code>number</code>. Automatically builds a
 sieve if <code>number</code> is larger then the existing sieve.
-
+<br>
 Returns: <code>Number</code> or <code>undefined</code> in case of an error
 </dd>
 
 <dt><code>precPrime(number)</code></dt>
 <dd>
 Searches for the nearest prime smaller than <code>number</code>. Does <strong>not</strong> automatically build a sieve if <code>number</code> is larger then the existing sieve. Should it?
-
+<br>
 Returns: <code>Number</code> or <code>undefined</code> in case of an error
 </dd>
 
@@ -98,7 +98,7 @@ Returns: <code>Number</code> or <code>undefined</code> in case of an error
 <dd>
 The approximated result (upper bound) of the prime counting function for
 <code>number</code>
-
+<br>
 Returns: <code>Number</code> or <code>undefined</code> in case of an error
 </dd>
 
@@ -106,7 +106,7 @@ Returns: <code>Number</code> or <code>undefined</code> in case of an error
 <dd>
 The exact result of the prime counting function for <code>number</code>. Automatically
 builds a sieve if <code>number</code> is larger then the existing sieve.
-
+<br>
 Returns: <code>Number</code> or <code>undefined</code> in case of an error
 </dd>
 
@@ -114,14 +114,14 @@ Returns: <code>Number</code> or <code>undefined</code> in case of an error
 <dd>
 Calculates the range of primes between <code>low</code> and <code>high</code>. It will detect if <code>low</code> and <code>high</code> are reversed and reruns itself with the arguments reversed.
 Automatically builds a sieve if <code>number</code> is larger then the existing sieve.
-
+<br>
 Returns: <code>Array</code> or <code>undefined</code> in case of an error
 </dd>
 <dt><code>primes(number)</code></dt>
 <dd>
 Calculates primes up to and including <code>number</code>. Automatically builds a sieve if
 <code>number</code> is larger then the existing sieve.
-
+<br>
 Returns: <code>Array</code> or <code>undefined</code> in case of an error
 </dd>
 <dt><code>raiseLimit(number)</code></dt>
@@ -129,7 +129,7 @@ Returns: <code>Array</code> or <code>undefined</code> in case of an error
 This module <code>primesieve</code> has a limit for the maximum size for the automatic
 sieve building. It is pre-defined at <code>0x800000</code> which is one megabyte. This
 function can raise it to the manager.
-
+<br>
 Returns: <code>undefined</code> in case of an error
 </dd>
 
@@ -145,9 +145,9 @@ An error number to string conversion. The following errors are used:
 <li>"Unknown error"</li>
 </ol>
 The numbers of the list correspond to the error numbers.
-
+<br>
 Returns: <code>String</code>
-
+<br>
 See also: <code>error</code>
 </dd>
 <dt><code>error</code></dt>
@@ -237,6 +237,5 @@ node primesieve-test.js
 ```
 
 If it still doesn't work with an error raised for not finding <code>vows</code>
-despite beeing installed--install it again, this time locally, that is, without the
-<code>-g</code> option. The npm packet manager is a bit peculiar in this regard.
+despite beeing installed--install <code>vows</code> again, this time locally, that is, without the <code>-g</code> option. The npm packet manager is a bit peculiar in this regard.
 
