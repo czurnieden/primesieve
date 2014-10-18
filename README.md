@@ -49,95 +49,91 @@ var array_of_first_five_primes = sieve.primes(5);
 This programm offers ten functions which are in alphabetical order:
 
 <dl>
-<dt>`fill(amount)` </dt>
+<dt><code>fill(amount)</code> </dt>
 <dd>
-Build a prime sieve up to the amount `amount`. Allows for skipping of the
-automated adapting of the sieve-size if `amount` is chosen high enough.
+Build a prime sieve up to the amount <code>amount</code>. Allows for skipping of the
+automated adapting of the sieve-size if <code>amount</code> is chosen high enough.
 
-Returns:  `undefined` in case of an error
+Returns: <code>undefined</code> in case of an error
 
-See also: `grow(amount)`
+See also: <code>grow(amount)</code>
 </dd>
-<dt>`grow(amount)` </dt>
+<dt><code>grow(amount)</code></dt>
 <dd>
-Grows the prime sieve by the amount `amount`. It just builds a new primesieve with
+Grows the prime sieve by the amount <code>amount</code>. It just builds a new primesieve with
 a different limit (if higher then the already existing limit) for now. Mostly
 used internally.
 
-Returns:  `undefined` in case of an error
+Returns:  <code>undefined</code> in case of an error
 
-See also: `fill(amount)`
+See also: <code>fill(amount)</code>
 </dd>
-<dt>`isSmallPrime(number)` </dt>
+<dt><code>isSmallPrime(number)</code></dt>
 <dd>
-Tests if `number` is a prime. Automatically builds a sieve if `number` is larger
-then the existing sieve.
+Tests if <code>number</code> is a prime. Automatically builds a sieve if <code>number</code> is larger then the existing sieve.
 
-Returns: `true` or `false` if `number` is a prime or not, respectively or
-`undefined` in case of an error.
+Returns: <code>true</code> or <code>false</code> if <code>number</code> is a prime or not, respectively or <code>undefined</code> in case of an error.
 
-See also: `Primesieve.raiseLimit(limit)`
+See also: <code>Primesieve.raiseLimit(limit)</code>
 </dd>
 
 </dd>
-<dt>`nextPrime(number)` </dt>
+<dt><code>nextPrime(number)</code> </dt>
 <dd>
-Searches for the nearest prime larger than `number`. Automatically builds a
-sieve if `number` is larger then the existing sieve.
+Searches for the nearest prime larger than <code>number</code>. Automatically builds a
+sieve if <code>number</code> is larger then the existing sieve.
 
-Returns: `Number` or `undefined` in case of an error
+Returns: <code>Number</code> or <code>undefined</code> in case of an error
 </dd>
 
-<dt>`precPrime(number)` </dt>
+<dt><code>precPrime(number)</code></dt>
 <dd>
-Searches for the nearest prime smaller than `number`. Does **not** automatically
-build a sieve if `number` is larger then the existing sieve. Should it?
+Searches for the nearest prime smaller than <code>number</code>. Does <strong>not</strong> automatically build a sieve if <code>number</code> is larger then the existing sieve. Should it?
 
-Returns: *Number` or `undefined` in case of an error
+Returns: <code>Number</code> or <code>undefined</code> in case of an error
 </dd>
 
 
-<dt>`primePiApprox(number)` </dt>
+<dt><code>primePiApprox(number)</code> </dt>
 <dd>
 The approximated result (upper bound) of the prime counting function for
-`number`
+<code>number</code>
 
-Returns: `Number` or `undefined` in case of an error
+Returns: <code>Number</code> or <code>undefined</code> in case of an error
 </dd>
 
-<dt>`primePi(number)` </dt>
+<dt><code>primePi(number)</code></dt>
 <dd>
-The exact result of the prime counting function for `number`.  Automatically
-builds a sieve if `number` is larger then the existing sieve.
+The exact result of the prime counting function for <code>number</code>. Automatically
+builds a sieve if <code>number</code> is larger then the existing sieve.
 
-Returns: `Number` or `undefined` in case of an error
+Returns: <code>Number</code> or <code>undefined</code> in case of an error
 </dd>
 
-<dt>`primeRange(low,high)` </dt>
+<dt><code>primeRange(low,high)</code></dt>
 <dd>
-Calculates the range of primes between `low` and `high`. It will detect if 
-`low` and `high` are reversed and reruns itself with the arguments reversed.
-Automatically builds a sieve if `number` is larger then the existing sieve.
+Calculates the range of primes between <code>low</code> and <code>high</code>. It will detect if <code>low</code> and <code>high</code> are reversed and reruns itself with the arguments reversed.
+Automatically builds a sieve if <code>number</code> is larger then the existing sieve.
 
-Returns: `Array` or `undefined` in case of an error
+Returns: <code>Array</code> or <code>undefined</code> in case of an error
 </dd>
-<dt>`primes(number)` </dt>
+<dt><code>primes(number)</code></dt>
 <dd>
-Calculates primes up to and including `number`. Automatically builds a sieve if
-`number` is larger then the existing sieve.
+Calculates primes up to and including <code>number</code>. Automatically builds a sieve if
+<code>number</code> is larger then the existing sieve.
 
-Returns: `Array` or `undefined` in case of an error
+Returns: <code>Array</code> or <code>undefined</code> in case of an error
 </dd>
-<dt>`raiseLimit(number)` </dt>
+<dt><code>raiseLimit(number)</code></dt>
 <dd>
-This module `primesieve` has a limit for the maximum size for the automatic
-sieve building. It is pre-defined at `0x800000` which is one megabyte. This
-function can raise it.
+This module <code>primesieve</code> has a limit for the maximum size for the automatic
+sieve building. It is pre-defined at <code>0x800000</code> which is one megabyte. This
+function can raise it to the manager.
 
-Returns: `undefined` in case of an error
+Returns: <code>undefined</code> in case of an error
 </dd>
 
-<dt>`sterror()` </dt>
+<dt><code>sterror()</code></dt>
 <dd>
 An error number to string conversion. The following errors are used:
 <ol>
@@ -150,13 +146,13 @@ An error number to string conversion. The following errors are used:
 </ol>
 The numbers of the list correspond to the error numbers.
 
-Returns: `String`
+Returns: <code>String</code>
 
-See also: `error`
+See also: <code>error</code>
 </dd>
-<dt>`error` </dt>
+<dt><code>error</code></dt>
 <dd>
-Variable holding the error number. For a table of errors see `strerror()`
+Variable holding the error number. For a table of errors see <code>strerror()</code>
 </dd>
 </dl>
 
@@ -229,7 +225,7 @@ Yes, eval is not the devil; it has its uses although not here.
 
 ##Test
 
-A test with a `vows` script is implemented. Please run if `vows` is installed:
+A test with a <code>vows</code> script is implemented. Please run if <code>vows</code> is installed:
 
 ```shell
 npm test
@@ -239,4 +235,8 @@ Or, if that doesn't work:
 ```shell
 node primesieve-test.js
 ```
+
+If it still doesn't work with an error raised for not finding <code>vows</code>
+despite beeing installed--install it again, this time locally, that is, without the
+<code>-g</code> option. The npm packet manager is a bit peculiar in this regard.
 
