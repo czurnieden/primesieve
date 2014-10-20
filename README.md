@@ -17,8 +17,8 @@ gets not installed by default, yet.
 
 ##Version
 
-0.0.3 Corrected error in GIT url
-0.0.2 Additional function to get the raw prime sieve.
+0.0.3 Corrected error in GIT url<br>
+0.0.2 Additional function to get the raw prime sieve.<br>
 0.0.1 Initial publication
 
 ##Description
