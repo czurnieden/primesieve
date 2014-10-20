@@ -1,6 +1,6 @@
 #primesieve
 
-A compact (bitfield) primesieve in JavaScript together with all the functions to use it
+A compact (bitfield) prime sieve in JavaScript together with all the functions to use it
 
 ##Author(s)
 Christoph Zurnieden <czurnieden@gmx.de>
@@ -12,22 +12,24 @@ $ git clone https://github.com/czurnieden/primesieve.git
 $ cd primesieve
 $ npm install -g
 ```
-There is also a Unix (or newer Macs) dependant CLI version in `./bin` which
+There is also a Unix (or newer Macs) dependent CLI version in `./bin` which
 gets not installed by default, yet.
 
 ##Version
 
+0.0.3 Corrected error in GIT url
+0.0.2 Additional function to get the raw prime sieve.
 0.0.1 Initial publication
 
 ##Description
 
-This library implements a primesieve with a bitfield in an `UInt32Array` (or a
+This library implements a prime sieve with a bitfield in an `UInt32Array` (or a
 normal `Array` if `UInt32Array` is not available). That means that the memory
 used is about the size of the biggest prime evaluated. E.g.: if the highest
 prime evaluated is `7927` the memory used is about `ceil(7927/32)*8 = 1984`
 bytes large.
 
-That is only an approximation because EMAScript offers no direct memory control.
+That is only an approximation because ECMAScript offers no direct memory control.
 
 The largest prime available would be at least `2147483647` on a 32-bit systems
 and a wee bit more on 64-bit systems but no guarantee for the latter.
@@ -35,18 +37,18 @@ and a wee bit more on 64-bit systems but no guarantee for the latter.
 Please be aware that **that** sieve would be 2 gigabytes large.
 
 Further optimizations can be done by ignoring all even numbers (except the even
-primes), maybe all multiples of 3, too. If you need such large sieves regularily
+primes), maybe all multiples of 3, too. If you need such large sieves regularly
 and in JavaScript: feel free to ask the author.
 
 ##Usage
 
-The usage is like with any other node/browser modul:
+The usage is like with any other node/browser module:
 ```javascript
 var sieve = require('primesieve');
 var array_of_first_five_primes = sieve.primes(5);
 ```
 
-This programm offers ten functions which are in alphabetical order:
+This program offers ten functions which are in alphabetical order:
 
 <dl>
 <dt><code>fill(amount)</code> </dt>
@@ -60,7 +62,7 @@ See also: <code>grow(amount)</code>
 </dd>
 <dt><code>grow(amount)</code></dt>
 <dd>
-Grows the prime sieve by the amount <code>amount</code>. It just builds a new primesieve with
+Grows the prime sieve by the amount <code>amount</code>. It just builds a new prime sieve with
 a different limit (if higher then the already existing limit) for now. Mostly
 used internally.
 <br>
@@ -132,7 +134,12 @@ function can raise it to the manager.
 <br>
 Returns: <code>undefined</code> in case of an error
 </dd>
-
+<dt><code>sieve()</code></dt>
+<dd>
+Get the raw prime sieve. This function is not implemented in the CLI version.
+<br>
+Returns: The raw prime sieve, either an `UInt32Array` or a normal `Array`
+</dd>
 <dt><code>sterror()</code></dt>
 <dd>
 An error number to string conversion. The following errors are used:
@@ -165,7 +172,7 @@ var p = require('primesieve');
 function primorial(n,result){
   var primes, ret, primepi;
 
-  // checks of arguments ommitted for brevity
+  // checks of arguments omitted for brevity
 
   primepi = p.primePi(n);
   if(typeof primepi === 'undefined'){
@@ -189,13 +196,13 @@ function primorial(n,result){
 With a browser (tested in Firefox 33.0.0)
 
 ```javascript
-// the modul must be included somewhere or just put on top
+// the module must be included somewhere or just put on top
 var p = primesieve;
 
 function primorial(n,result){
   var primes, ret, primepi;
 
-  // checks of arguments ommitted for brevity
+  // checks of arguments omitted for brevity
 
   primepi = p.primePi(n);
   if(typeof primepi === 'undefined'){
@@ -221,7 +228,7 @@ In a much simpler but frowned upon way:
 ```javascript
 var primorial = eval(p.primes(8).join("*"));
 ```
-Yes, eval is not the devil; it has its uses although not here.
+Yes, `eval` is not the devil; it has its uses, although not here.
 
 ##Test
 
@@ -237,5 +244,5 @@ node primesieve-test.js
 ```
 
 If it still doesn't work with an error raised for not finding <code>vows</code>
-despite beeing installed--install <code>vows</code> again, this time locally, that is, without the <code>-g</code> option. The npm packet manager is a bit peculiar in this regard.
+despite being installed--install <code>vows</code> again, this time locally, that is, without the <code>-g</code> option. The npm packet manager is a bit peculiar in this regard.
 
