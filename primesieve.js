@@ -307,6 +307,9 @@ var primesieve = (function() {
             primesizelimit = raise;
         }
     };
+    Primesieve.sieve = function() {
+        return primesieve;
+    };
     return Primesieve;
 })(/* You may place a start-size here */);
 
