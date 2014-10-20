@@ -1,6 +1,6 @@
 {
     "name": "primesieve",
-    "description": "A compact (bitfield) primesieve in JavaScrip together with the functions to use it",
+    "description": "A compact (bitfield) primesieve in JavaScript together with the functions to use it",
     "author": "Christoph Zurnieden <czurnieden@gmx.de>",
     "repository": {
         "type": "git",
@@ -13,7 +13,7 @@
         "vows": "^0.5.x"
     },
     "bin" : "./bin/primesieve.js",
-    "version":"0.0.1",
+    "version":"0.0.2",
     "scripts": {
         "test": "node ./primesieve-test.js"
     },
