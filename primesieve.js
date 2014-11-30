@@ -7,7 +7,10 @@ var primesieve = (function() {
     var primesizelimit = 0x800000; // 1 megabyte
 
     // works with normal arrays, too
-    if (typeof Uint32Array === 'undefined') Uint32Array = Array;
+    if (typeof Uint32Array === 'undefined'){
+        Uint32Array = Array;
+        ArrayBuffer = function(){return 0;};
+    }
 
     // 30*log(113)/113 see also http://oeis.org/A209883
     var LN_113 = 1.25505871293247979696870747618124469168920275806274;
@@ -63,7 +66,11 @@ var primesieve = (function() {
         n = n + 1;
         primelimit = n - 1;
         k = Math.ceil(n / 32);
-        buffer = new ArrayBuffer(k * 4);
+        if(typeof ArrayBuffer !== "function"){
+            buffer = new ArrayBuffer(k * 4);
+        } else {
+            buffer = k;
+        }
         primesieve = new Uint32Array(buffer);
         while (k--) {
             primesieve[k] = 0xffffffff;
