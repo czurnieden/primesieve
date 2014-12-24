@@ -13,7 +13,7 @@
         "vows": "^0.5.x"
     },
     "bin" : "./bin/primesieve.js",
-    "version":"0.1.0",
+    "version":"0.2.0",
     "scripts": {
         "test": "node ./primesieve-test.js"
     },
@@ -22,6 +22,8 @@
     "keywords": [
         "primesieve",
         "primes",
-        "prime pi"
+        "prime pi",
+        "prime decomposition",
+        "prime factors"
     ]
 }

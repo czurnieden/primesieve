@@ -43,6 +43,48 @@ vows.describe('Primesieve').addBatch({
             assert.isFalse (primes);
         }
     },
+   'Prime test 3': {
+        topic: p.isPrime(123123123123),
+        'is 123123123123 prime': function (primes) {
+            assert.isFalse (primes);
+        }
+    },
+   'Prime test 4': {
+        topic: p.isPrime(9007199254740881),
+        'is 9007199254740881 prime': function (primes) {
+            assert.isTrue (primes);
+        }
+    },
+   'Factor test 1': {
+        topic: p.factor(123123123123123),
+        'factors of 123123123123123': function (primes) {
+            assert.deepEqual (primes, [3,31,41,41,271,2906161]);
+        }
+    },
+   'Factor test 2': {
+        topic: p.factor(9007199254740898),
+        'factors of 9007199254740898': function (primes) {
+            assert.deepEqual (primes, [2,4503599627370449]);
+        }
+    },
+   'Factor test 3': {
+        topic: p.factor(9007195909437503),
+        'factors of 9007195909437503': function (primes) {
+            assert.deepEqual (primes, [94906247,94906249]);
+        }
+    },
+   'Prime Decomposition test 1': {
+        topic: p.primeDecomposition(123123123123123),
+        'factors of 123123123123123': function (primes) {
+            assert.deepEqual (primes, [[3,1],[31,1],[41,2],[271,1],[2906161,1]]);
+        }
+    },
+   'Prime Decomposition test 2': {
+        topic: p.primeDecomposition(9007199254740992),
+        'factors of 9007199254740992': function (primes) {
+            assert.deepEqual (primes, [[2,53]]);
+        }
+    },
    'Next prime': {
         topic: p.nextPrime(500),
         'after 500 ': function (primes) {
